@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="UART_Profiler.Model.BreakPointHistory">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Model\BreakPointHistory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UART_Profiler.Model.DumpFileData">
+    <Position X="6.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAgAAAABAIAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Model\DumpFileData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UART_Profiler.Model.FwSettings">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAggAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\FwSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UART_Profiler.Model.MapFileData">
+    <Position X="2.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAgAAAAAAIAAAAAAAAAAACAAAACIAACAA=</HashCode>
+      <FileName>Model\MapFileData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UART_Profiler.Dialogs.BreakPointHistoryChart">
+    <Position X="6.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABCAAACAAAACAAAECAAAACgAQAAAAAAAACAA=</HashCode>
+      <FileName>Dialogs\BreakPointHistoryChart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UART_Profiler.Dialogs.BreakPointForm">
+    <Position X="8.5" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAICIKEhATAECBCgAQACBAAcoQICEGAAAAAAABA=</HashCode>
+      <FileName>Dialogs\BreakPointForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UART_Profiler.Dialogs.DynamicBreakPoint">
+    <Position X="4.25" Y="0.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>IACAIAAEACAwQTAQwQCgMEICAhAIE0SCQAAAQQBBBAA=</HashCode>
+      <FileName>Dialogs\DynamicBreakPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UART_Profiler.Model.UART_BreakPoint">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAACAAAAAAAAAAAAAAUAAAAAAAA=</HashCode>
+      <FileName>Model\UART_BreakPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UART_Profiler.Enumerate">
+    <Position X="0.5" Y="4.25" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>oABBAAAAUCAQATQwAACCSeACEAAAghCACCABAgkgAAE=</HashCode>
+      <FileName>Dialogs\Enumerate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UART_Profiler.UploadToS3">
+    <Position X="8.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACIAAAAABAAAACAAAAAAAAgIAAAAAAAAAABACAAAAAA=</HashCode>
+      <FileName>Utility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="UART_Profiler.Common.BreakPoint">
+    <Position X="4.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAQAAAAAAAAAAAAAAgEAAAAAgAAgAAAAQAAQAAA=</HashCode>
+      <FileName>Common\BreakPointEnumCollection.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

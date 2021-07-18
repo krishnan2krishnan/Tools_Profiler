@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB73DB3C-0DB7-4325-81A2-148AE308DF45}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UART_Profiler</RootNamespace>
+    <AssemblyName>UART_Profiler</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK.Connect">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\AWS SDK for .NET\bin\Net45\AWSSDK.Connect.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Core">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\AWS SDK for .NET\bin\Net45\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.S3">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\AWS SDK for .NET\bin\Net45\AWSSDK.S3.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Shared.v19.1, Version=19.1.20191.238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.DataVisualization.Shared.v19.1, Version=19.1.20191.238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.DataVisualization.UltraDataChart.v19.1, Version=19.1.20191.238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.Misc.v19.1, Version=19.1.20191.238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.Portable.Core.v19.1, Version=19.1.20191.238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.UltraWinChart.v19.1, Version=19.1.20191.238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinDataSource.v19.1, Version=19.1.20191.238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinGrid.v19.1, Version=19.1.20191.238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinListView.v19.1, Version=19.1.20191.238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinTabControl.v19.1, Version=19.1.20191.238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinTree.v19.1, Version=19.1.20191.238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.v19.1, Version=19.1.20191.238, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\BreakPointEnumCollection.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Dialogs\BreakPointForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\BreakPointForm.Designer.cs">
+      <DependentUpon>BreakPointForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\BreakPointHistoryChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\BreakPointHistoryChart.Designer.cs">
+      <DependentUpon>BreakPointHistoryChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\DynamicBreakPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\DynamicBreakPoint.Designer.cs">
+      <DependentUpon>DynamicBreakPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Enumerate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Enumerate.Designer.cs">
+      <DependentUpon>Enumerate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\HealthStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\HealthStatus.Designer.cs">
+      <DependentUpon>HealthStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BreakPointHistory.cs" />
+    <Compile Include="Model\DumpFileData.cs" />
+    <Compile Include="Model\FwSettings.cs" />
+    <Compile Include="Model\MapFileData.cs" />
+    <Compile Include="Model\UART_BreakPoint.cs" />
+    <Compile Include="Model\UART_Byte_Zero_Struct.cs" />
+    <Compile Include="Model\UART_HealthStatus.cs" />
+    <Compile Include="Model\UART_Parse_Structure.cs" />
+    <Compile Include="Model\UART_Serial_Connection_Parameters.cs" />
+    <Compile Include="UART_HID\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UART_HID\AboutBox.Designer.cs" />
+    <Compile Include="UART_HID\CommPort.cs" />
+    <Compile Include="UART_HID\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UART_HID\Form1.Designer.cs" />
+    <Compile Include="UART_HID\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UART_HID\Form2.Designer.cs" />
+    <Compile Include="UART_HID\HidPort.cs" />
+    <Compile Include="UART_HID\IniFile.cs" />
+    <Compile Include="UART_HID\Settings.cs" />
+    <Compile Include="UART_HID\SLABCP2110.cs" />
+    <Compile Include="UART_HID\SLABHIDtoUART.cs" />
+    <Compile Include="UART_PROFILER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UART_PROFILER.Designer.cs">
+      <DependentUpon>UART_PROFILER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility.cs" />
+    <EmbeddedResource Include="Dialogs\BreakPointForm.resx">
+      <DependentUpon>BreakPointForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\BreakPointHistoryChart.resx">
+      <DependentUpon>BreakPointHistoryChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\DynamicBreakPoint.resx">
+      <DependentUpon>DynamicBreakPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\Enumerate.resx">
+      <DependentUpon>Enumerate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\HealthStatus.resx">
+      <DependentUpon>HealthStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="UART_HID\AboutBox.resx" />
+    <EmbeddedResource Include="UART_HID\Form1.resx" />
+    <EmbeddedResource Include="UART_HID\Form2.resx" />
+    <EmbeddedResource Include="UART_PROFILER.resx">
+      <DependentUpon>UART_PROFILER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\DataSources\UART_Profiler.Model.BreakPointHistory.datasource" />
+    <None Include="Properties\DataSources\UART_Profiler.Model.DumpFileData.datasource" />
+    <None Include="Properties\DataSources\UART_Profiler.Model.MapFileData.datasource" />
+    <None Include="Properties\DataSources\UART_Profiler.Model.UART_BreakPoint.datasource" />
+    <None Include="Properties\DataSources\UART_Profiler.Model.UART_HealthStatus.datasource" />
+    <None Include="Properties\DataSources\UART_Profiler.Model.UART_Serial_Connection_Parameters.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bph-cloud-upload.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bar-chart-royalty-_240-195.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gettyimages-464934202-1024x1024.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
